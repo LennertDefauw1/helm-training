@@ -11,3 +11,7 @@ data:
   mug: "true" 
   {{ end }}
   release: {{ .Release.Name }}
+  lekkereBiertjes: |-
+    {{- range .Values.biertjes }}
+    - {{ . | title | quote }}
+    {{- end }}    

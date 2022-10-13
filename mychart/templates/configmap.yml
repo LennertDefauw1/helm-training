@@ -10,4 +10,4 @@ data:
   {{- if eq .Values.favoriteDrink "biertje" }}
   mug: "true" 
   {{ end }}
-  relase: {{ .Release.Name }}
+  release: {{ .Release.Name }}

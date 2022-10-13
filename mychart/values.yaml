@@ -1,6 +1,7 @@
-favoriteDrink: biertje
-food: bak frieten
-biertjes:
+favorite:
+  drink: biertje
+  food: bak frieten
+  biertjes:
   - kwaremond
   - jupiler
   - stella

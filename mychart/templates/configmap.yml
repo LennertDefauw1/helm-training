@@ -3,15 +3,9 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap
 data:
-  myvalue: "Hello World"
-  drink: {{ .Values.favoriteDrink | quote | upper }}
-  food: {{ .Values.food | quote | upper }}
-  money: {{ .Values.money | default "DEFAULT VALUE" | lower | quote }}
-  {{- if eq .Values.favoriteDrink "biertje" }}
-  mug: "true" 
-  {{ end }}
-  release: {{ .Release.Name }}
-  lekkereBiertjes: |-
-    {{- range .Values.biertjes }}
-    - {{ . | title | quote }}
-    {{- end }}    
+  {{- $relname := .Release.Name -}}
+  {{- with .Values.favorite }}
+  drink: {{ .drink | default "tea" | quote }}
+  food: {{ .food | upper | quote }}
+  name: {{ $relname }}
+  {{- end }}

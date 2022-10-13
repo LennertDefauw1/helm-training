@@ -1,9 +1,3 @@
-{{- define "mychart.labels" }}
-  labels:
-    custom: lennert
-    generator: helm
-    date: {{ now | htmlDate }}
-{{- end }}
 {{- with .Values.tlsSecrets }}
 apiVersion: v1
 kind: ConfigMap

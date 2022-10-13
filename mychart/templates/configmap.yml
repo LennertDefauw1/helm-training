@@ -7,3 +7,4 @@ data:
   drink: {{ .Values.favoriteDrink | quote | upper }}
   food: {{ .Values.food | quote | upper }}
   money: {{ .Values.money | default "DEFAULT VALUE" | lower | quote }}
+  {{ if eq .Values.favoriteDrink "biertje" }}mug: "true"{{ end }}

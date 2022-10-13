@@ -11,6 +11,4 @@ data:
   {{ $key }}: {{ $val | quote }}
   {{- end }}
 
-  {{- range $key, $val := $.Release }}
-  {{ $key }}: {{ $val | quote }}
-  {{- end }}
+  dessert: {{ .Values.global.salad}}

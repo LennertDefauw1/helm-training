@@ -4,3 +4,10 @@ favorite:
 
 tlsSecrets:
   name: secretTls
+
+
+mysubchart:
+  dessert: pientje
+
+global:
+  salad: cesar

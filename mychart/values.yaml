@@ -1,8 +1,6 @@
 favorite:
   drink: biertje
   food: bak frieten
-  biertjes:
-  - kwaremond
-  - jupiler
-  - stella
-  - maes
+
+tlsSecrets:
+  name: secretTls

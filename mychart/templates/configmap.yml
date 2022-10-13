@@ -1,11 +1,23 @@
+{{- define "mychart.labels" }}
+  labels:
+    custom: lennert
+    generator: helm
+    date: {{ now | htmlDate }}
+{{- end }}
+{{- with .Values.tlsSecrets }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-configmap
+  name: {{ $.Release.Name }}
+   {{- template "mychart.labels" }}
+
 data:
-  {{- $relname := .Release.Name -}}
-  {{- with .Values.favorite }}
-  drink: {{ .drink | default "tea" | quote }}
-  food: {{ .food | upper | quote }}
-  name: {{ $relname }}
+  {{- range $key, $val := $.Values.favorite }}
+  {{ $key }}: {{ $val | quote }}
   {{- end }}
+
+  {{- range $key, $val := $.Release }}
+  {{ $key }}: {{ $val | quote }}
+  {{- end }}
+
+{{- end }}
